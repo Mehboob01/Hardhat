@@ -14,19 +14,27 @@ task('accounts', 'Prints the list of accounts', async (taskArgs, hre) => {
 const privateKey = process.env.PRIVATE_KEY; // Retrieve the private key from the .env file
 const etherscanAPIKey = process.env.API_KEY; // Retrieve the Etherscan API key from the .env file
 
-module.exports = {
-  solidity: '0.8.19',
-  networks: {
-  BSC: {
-      url: 'https://data-seed-prebsc-2-s3.binance.org:8545',
-      accounts: [privateKey],
+  module.exports = {
+    solidity: {
+      version: '0.8.19',
+      settings: {
+        optimizer: {
+          enabled: true,
+          runs: 200,
+        },
+      },
     },
-    mainnet: {
-      url: 'https://mainnet.infura.io/v3/PROJECT_ID',
-      accounts: [privateKey],
+    networks: {
+      BSC: {
+        url: 'https://data-seed-prebsc-2-s3.binance.org:8545',
+        accounts: [privateKey],
+      },
+      mainnet: {
+        url: 'https://mainnet.infura.io/v3/PROJECT_ID',
+        accounts: [privateKey],
+      },
     },
-  },
-  etherscan: {
-    apiKey: etherscanAPIKey,
-  },
-};
+    etherscan: {
+      apiKey: etherscanAPIKey,
+    },
+  };
