@@ -11,8 +11,8 @@ task('accounts', 'Prints the list of accounts', async (taskArgs, hre) => {
   }
 });
 
-const privateKey = process.env.BSC_PRIVATE_KEY; // Retrieve the private key from the .env file
-const etherscanAPIKey = process.env.ETHERSCAN_API_KEY; // Retrieve the Etherscan API key from the .env file
+const privateKey = process.env.PRIVATE_KEY; // Retrieve the private key from the .env file
+const etherscanAPIKey = process.env.API_KEY; // Retrieve the Etherscan API key from the .env file
 
 module.exports = {
   solidity: '0.8.19',
