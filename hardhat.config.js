@@ -17,7 +17,7 @@ const etherscanAPIKey = process.env.ETHERSCAN_API_KEY; // Retrieve the Etherscan
 module.exports = {
   solidity: '0.8.19',
   networks: {
-    bscTestnet: {
+  BSC: {
       url: 'https://data-seed-prebsc-2-s3.binance.org:8545',
       accounts: [privateKey],
     },
